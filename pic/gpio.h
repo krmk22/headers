@@ -40,21 +40,21 @@ PIC_PORT_GPIO_PINS;
 /*****SOME PREDEFINED FUNCTIONS TO FAST ACCESS******/
 /***************************************************/
 #define gpio_set_output(pin) 			(*(trisstate + (pin >> 3)) &=~(1 << (pin & 0x07)))
-#define gpio_set_input(pin)				(*(trisstate + (pin >> 3)) |= (1 << (pin & 0x07)))
+#define gpio_set_input(pin)			(*(trisstate + (pin >> 3)) |= (1 << (pin & 0x07)))
 #define gpio_set_toggle(pin)			(*(trisstate + (pin >> 3)) ^= (1 << (pin & 0x07)))
 #define gpio_set_output_all(pin)		(*(trisstate + (pin >> 3)) &=~0xFF)
 #define gpio_set_input_all(pin)			(*(trisstate + (pin >> 3)) |= 0xFF)
 #define gpio_set_toggle_all(pin)		(*(trisstate + (pin >> 3)) ^= 0xFF)
 
-#define gpio_put_high(pin)				(*(pinstate + (pin >> 3)) |= (1 << (pin & 0x07)))
-#define gpio_put_low(pin)				(*(pinstate + (pin >> 3)) &=~(1 << (pin & 0x07)))
+#define gpio_put_high(pin)			(*(pinstate + (pin >> 3)) |= (1 << (pin & 0x07)))
+#define gpio_put_low(pin)			(*(pinstate + (pin >> 3)) &=~(1 << (pin & 0x07)))
 #define gpio_put_toggle(pin)			(*(pinstate + (pin >> 3)) ^= (1 << (pin & 0x07)))
 #define gpio_put_high_all(pin)			(*(pinstate + (pin >> 3)) |= 0xFF)
 #define gpio_put_low_all(pin)			(*(pinstate + (pin >> 3)) &=~0xFF)
 #define gpio_put_toggle_all(pin)		(*(pinstate + (pin >> 3)) ^= 0xFF)
 
-#define gpio_get(pin)					(*(portstate + (pin >> 3)) & (1 << (pin & 0x07)))
-#define gpio_get_all(pin)				(*(portstate + (pin >> 3)))
+#define gpio_get(pin)				(*(portstate + (pin >> 3)) & (1 << (pin & 0x07)))
+#define gpio_get_all(pin)			(*(portstate + (pin >> 3)))
 
 /**********************************************************************
 @brief	set gpio direction of pic i/o port pin
